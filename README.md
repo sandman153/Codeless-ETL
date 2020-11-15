@@ -8,5 +8,3 @@ In this demo I will build pipelines using the AdventureWorks database and will b
 ## 1. Simple Data Flow
 
 ## 2. Insert Slowly changed records
-
-[![Deploy to Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/deploybutton.png)](https://azuredeploy.net/)
