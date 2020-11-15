@@ -6,9 +6,9 @@ In this section you will automatically provision all Azure resources used in the
 ## Azure services provisioned for the demos
 The following resources will be deployed in your subscription:
 
-Name        | Type  |   Pricing Tier    |   Pricing Info    |
-------------| ------|-------------------|-------------------|
-Azure Data Factory |
+| Name               | Type | Pricing Tier | Pricing Info |
+| ------------------ | ---- | ------------ | ------------ |
+| Azure Data Factory |
 
  <br>**IMPORTANT**: When you deploy the lab resources in your own subscription you are responsible for the charges related to the use of the services provisioned. If you don't want any extra charges associated with the lab resources you should delete the lab resource group and all resources in it.
 
@@ -37,9 +37,10 @@ In this section you will use the Azure Portal to create a Resource Group that wi
 
 6.	In the Resource group text box enter “Codeless-Demo”
 
-   **IMPORTANT**: The name of the resource group chosen is ***not*** relevant to the successful completion of the labs. If you choose to use a different name, then please proceed with the rest of the lab using your unique name for the resource group.
+   **IMPORTANT**: The name of the resource group chosen is ***not*** relevant to the successful completion of the labs. If you choose to use a different name, then please proceed with the rest of the lab using your unique name for the resource group. 
+   
+   ![](./Media/Demo-004.png) 
 
-    ![](./Media/Demo-004.png)
 
 7.	In the Region drop down list, select one of the regions from the list below.
 
@@ -92,9 +93,9 @@ In this section you will use automated deployment and ARM templates to automate 
 
 The approximate cost to run the resources provisioned for the estimated duration of this workshop (2 days) is around USD 100.00. Remember that you will start get charged from the moment the resource template deployment completes successfully. You can minimise costs during the execution of the labs by taking the following actions below:
 
-Azure Resource | Type | Action |
----------------|------|--------|
-Azure SQLDB      | Azure SQL DB | Delete the resources when demo is complete|
-Azure Data Factory | Azure Data Factory | Stop Debugging once demo is complete|
+| Azure Resource     | Type               | Action                                     |
+| ------------------ | ------------------ | ------------------------------------------ |
+| Azure SQLDB        | Azure SQL DB       | Delete the resources when demo is complete |
+| Azure Data Factory | Azure Data Factory | Stop Debugging once demo is complete       |
 
 Some of the services still incur costs even when not running. If you don't want any extra charges associated with the lab resources you should delete the lab resource group and all resources in it.
