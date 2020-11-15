@@ -69,15 +69,15 @@ In this section you will use automated deployment and ARM templates to automate 
 
 1. You can deploy all Azure services required in each lab by clicking the **Deploy to Azure** button below.
 
-<img src="https://aka.ms/deploytoazurebutton"/>
+![Deploy to Azure](https://aka.ms/deploytoazurebutton) (https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2Fsandman153%2FCodeless-ETL%2Fblob%2Fmain%2FDeploy%2Fazuredeploy.json)
 
-2. You will be directed to the Azure portal to deploy the ADPE2E ARM template from this repository. On the **Custom deployment** blade, enter the following details:
+1. You will be directed to the Azure portal to deploy the ADPE2E ARM template from this repository. On the **Custom deployment** blade, enter the following details:
     <br>- **Subscription**: [your Azure subscription]
     <br>- **Resource group**: [select the resource group you created in the previous section]
 
     Please review the Terms and Conditions and check the box to indicate that you agree with them.
 
-3. Click **Purchase**
+2. Click **Purchase**
 
 ![](./Media/Lab0-Image10.png)
 
