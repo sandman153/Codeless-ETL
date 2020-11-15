@@ -3,8 +3,7 @@ In this demo I will be giving everyone a brief introduction to Azure Data Factor
 
 In this demo I will build pipelines using the AdventureWorks database and will be using two tables from that database.
 
-
-## Environment Setup
+### [Environment Setup: Deploy Codeless-ETL resources to your subscription](./Deploy/Deploy.md)
 
 ## 1. Simple Data Flow
 
