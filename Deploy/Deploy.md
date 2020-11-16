@@ -81,7 +81,7 @@ In this section you will use automated deployment and ARM templates to automate 
 
 2. Click **Purchase**
 
-![](./Media/Lab0-Image10.png)
+![](./Media/Demo-005.png)
 
 4. Navigate to your resource group to monitor the progress of your ARM template deployment. A successful deployment should last less than 10 minutes.
 

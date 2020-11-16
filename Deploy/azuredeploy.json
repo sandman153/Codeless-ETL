@@ -97,7 +97,7 @@
 
                     },
                     "dependsOn": [
-                        "[resourceId('Microsoft.Sql/servers', 'CodelessDemoServerName')]"
+                        "[resourceId('Microsoft.Sql/servers', variables('CodelessDemoServerName'))]"
                     ],
                     "properties": {
                         "collation": "[variables('CodelessDemodatabaseCollation')]",
