@@ -90,8 +90,8 @@
                 },
                 {
                     "name": "[variables('CodelessDemoDatabaseName')]",
-                    "type": "Microsoft.Sql/servers/databases",
-                    "apiVersion": "2014-04-01",
+                    "type": "Microsoft.Sql/servers/database",
+                    "apiVersion": "2017-10-01-preview",
                     "location": "[resourceGroup().location]",
                     "sku": {
                         "name": "GP_Gen5",
