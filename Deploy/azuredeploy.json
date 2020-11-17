@@ -96,7 +96,7 @@
                         "collation": "[variables('CodelessDemodatabaseCollation')]",
                         "edition": "G",
                         "maxSizeBytes": 1073741824,
-                        "requestedServiceObjectiveName": "Basic"
+                        "requestedServiceObjectiveName": "Gen5"
                     }
                 }
             ]
