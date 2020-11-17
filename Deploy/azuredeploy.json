@@ -76,19 +76,6 @@
             },
             "resources": [
                 {
-                    "type": "firewallRules",
-                    "apiVersion": "2014-04-01",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Sql/servers', 'sqlServer1')]"
-                    ],
-                    "location": "[resourceGroup().location]",
-                    "name": "AllowAllWindowsAzureIps",
-                    "properties": {
-                        "startIpAddress": "0.0.0.0",
-                        "endIpAddress": "0.0.0.0"
-                    }
-                },
-                {
                     "name": "[variables('CodelessDemoDatabaseName')]",
                     "type": "databases",
                     "apiVersion": "2017-10-01-preview",
