@@ -90,14 +90,14 @@
                 },
                 {
                     "name": "[variables('CodelessDemoDatabaseName')]",
-                    "type": "Microsoft.Sql/servers/database",
+                    "type": "databases",
                     "apiVersion": "2017-10-01-preview",
                     "location": "[resourceGroup().location]",
                     "sku": {
                         "name": "GP_Gen5",
                         "tier": "[variables('CodelessDemodatabaseEdition')]",
                         "family": "Gen5",
-                        "capacity":"1"
+                        "capacity": 1
 
                     },
                     "tags": {
@@ -108,7 +108,7 @@
                     "properties": {
                         "collation": "[variables('CodelessDemodatabaseCollation')]",
                         "edition": "G",
-                        "maxSizeBytes": "1073741824",
+                        "maxSizeBytes": 1073741824,
                         "requestedServiceObjectiveName": "Basic"
                     }
                 }
