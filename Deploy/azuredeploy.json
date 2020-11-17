@@ -26,7 +26,7 @@
         "CodelessADPFactoryName": "[concat('codeless-', substring(variables('UniqueSuffix'), 0, 5))]",
         "CodelessDemoServerName": "[concat('sqlserver-', substring(variables('UniqueSuffix'), 0, 5))]",
         "CodelessDemoDatabaseName": "Codeless-Demo",
-        "CodelessDemodatabaseEdition": "Basic",
+      "CodelessDemodatabaseEdition": "GeneralPurpose",
         "CodelessDemodatabaseCollation": "SQL_Latin1_General_CP1_CI_AS"
     },
     "resources": [
@@ -79,7 +79,7 @@
                     "type": "firewallRules",
                     "apiVersion": "2014-04-01",
                     "dependsOn": [
-                        "[resourceId('Microsoft.Sql/servers', variables('CodelessDemoServerName'))]"
+                        "[resourceId('Microsoft.Sql/servers', 'sqlServer1')]"
                     ],
                     "location": "[resourceGroup().location]",
                     "name": "AllowAllWindowsAzureIps",
@@ -90,54 +90,52 @@
                 },
                 {
                     "name": "[variables('CodelessDemoDatabaseName')]",
-                    "type": "databases",
+                    "type": "Microsoft.Sql/servers/databases",
                     "apiVersion": "2014-04-01",
                     "location": "[resourceGroup().location]",
-                    "tags": {
+                    "sku": {
+                        "name": "GP_Gen5",
+                        "tier": "[variables('CodelessDemodatabaseEdition')]",
+                        "family": "Gen5",
+                        "capacity":"1"
 
                     },
+                    "tags": {
+                    },
                     "dependsOn": [
-                        "[resourceId('Microsoft.Sql/servers', variables('CodelessDemoServerName'))]"
+                        "[variables('CodelessDemoDatabaseName')]"
                     ],
                     "properties": {
                         "collation": "[variables('CodelessDemodatabaseCollation')]",
-                        "edition": "[variables('CodelessDemodatabaseEdition')]",
+                        "edition": "G",
                         "maxSizeBytes": "1073741824",
-                        "requestedServiceObjectiveName": "[variables('CodelessDemodatabaseEdition')]",
-                        "administratorLogin": "[variables('CodelessAdminUser')]",
-                        "administratorPassword": "[variables('CodelessAdminPassowrd')]"
-                    },
-                    "sku": {
-                        "name": "Basic",
-                        "tier": "Basic"
+                        "requestedServiceObjectiveName": "Basic"
                     }
-                },
-                {
-                    "name": "[variables('CodelessADPFactoryName')]",
-                    "type": "Microsoft.DataFactory/factories",
-                    "apiVersion": "2018-06-01",
-                    "location": "[resourceGroup().location]",
-                    "tags": {},
-                    "identity": {
-                        "type": "SystemAssigned"
-                    },
-                    "properties": {
-                        "repoConfiguration": {
-                            "accountName": "sandman153",
-                            "repositoryName": "Codeless-ETL",
-                            "collaborationBranch": "master",
-                            "rootFolder": "/Codeless-ETL",
-                            "type": "string"
-                        },
-                        "globalParameters": {}
-                    },
-                    "resources": []
                 }
             ]
+        },
+        {
+            "name": "[variables('CodelessADPFactoryName')]",
+            "type": "Microsoft.DataFactory/factories",
+            "apiVersion": "2018-06-01",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "repoConfiguration": {
+                    "projectName": "Codeless-Demo",
+                    "accountName": "sandman153",
+                    "repositoryName": "Codeless-ETL",
+                    "collaborationBranch": "main",
+                    "rootFolder": "/",
+                    "type": "FactoryVSTSConfiguration"
+                },
+                "globalParameters": {}
+            },
+            "resources": []
         }
-
-
     ],
     "outputs": {}
-
 }
