@@ -38,8 +38,8 @@
             "location": "[resourceGroup().location]",
             "kind": "StorageV2",
             "sku": {
-                "name": "Standard_ZRS",
-                "tier": "Standard"
+                "name": "Standard_LRS",
+                "tier": "Standard_LRS"
             },
             "dependsOn": []
         },
@@ -51,8 +51,8 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('CodelessLakeStorageName'))]"
             ],
             "sku": {
-                "name": "Standard_ZRS",
-                "tier": "Standard"
+                "name": "Standard_LRS",
+                "tier": "Standard_LRS"
             },
             "properties": {
                 "cors": {
