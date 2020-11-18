@@ -66,7 +66,7 @@
         {
             "name": "[variables('CodelessDemoServerName')]",
             "type": "Microsoft.Sql/servers",
-            "apiVersion": "2014-04-01",
+            "apiVersion": "2020-02-02-preview",
             "location": "[resourceGroup().location]",
             "tags": {
             },
@@ -81,23 +81,14 @@
                     "apiVersion": "2017-10-01-preview",
                     "location": "[resourceGroup().location]",
                     "sku": {
-                        "name": "GP_Gen5",
-                        "tier": "[variables('CodelessDemodatabaseEdition')]",
-                        "family": "Gen5",
-                        "capacity": 1
-
+                        "name": "Standard",
+                        "tier": "[variables('CodelessDemodatabaseEdition')]"
                     },
                     "tags": {
                     },
                     "dependsOn": [
-                        "[variables('CodelessDemoDatabaseName')]"
-                    ],
-                    "properties": {
-                        "collation": "[variables('CodelessDemodatabaseCollation')]",
-                        "edition": "G",
-                        "maxSizeBytes": 1073741824,
-                        "requestedServiceObjectiveName": "Gen5"
-                    }
+                        "[resourceId('Microsoft.Sql/servers', variables('CodelessDemoServerName'))]"
+                    ]
                 }
             ]
         },
