@@ -26,7 +26,7 @@
         "CodelessADPFactoryName": "[concat('cdlessadf-', substring(variables('UniqueSuffix'), 0, 5))]",
         "CodelessDemoServerName": "[concat('sql-', substring(variables('UniqueSuffix'), 0, 5))]",
         "CodelessDemoDatabaseName": "Codeless-Demo",
-      "CodelessDemodatabaseEdition": "Standard",
+        "CodelessDemodatabaseEdition": "Standard",
         "CodelessDemodatabaseCollation": "SQL_Latin1_General_CP1_CI_AS"
     },
     "resources": [
@@ -34,34 +34,24 @@
             "name": "[variables('CodelessLakeStorageName')]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2019-06-01",
-            "tags": {},
+            "tags": {
+            },
             "location": "[resourceGroup().location]",
             "kind": "StorageV2",
             "sku": {
                 "name": "Standard_LRS",
                 "tier": "Standard"
             },
-            "dependsOn": []
-        },
-        {
-            "type": "Microsoft.Storage/storageAccounts/blobServices",
-            "apiVersion": "2019-06-01",
-            "name": "[concat(variables('CodelessLakeStorageName'), '/default')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', variables('CodelessLakeStorageName'))]"
-            ],
-            "sku": {
-                "name": "Standard_LRS",
-                "tier": "Standard_LRS"
-            },
-            "properties": {
-                "cors": {
-                    "corsRules": []
-                },
-                "deleteRetentionPolicy": {
-                    "enabled": false
+            "resources": [
+                {
+                    "type": "Microsoft.Storage/storageAccounts/blobServices",
+                    "apiVersion": "2019-06-01",
+                    "name": "[concat(variables('CodelessLakeStorageName'), '/default')]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Storage/storageAccounts', variables('CodelessLakeStorageName'))]"
+                    ]
                 }
-            }
+            ]
         },
         {
             "name": "[variables('CodelessDemoServerName')]",
