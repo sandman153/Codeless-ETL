@@ -26,7 +26,7 @@
         "CodelessADPFactoryName": "[concat('cdlessadf-', substring(variables('UniqueSuffix'), 0, 5))]",
         "CodelessDemoServerName": "[concat('sql-', substring(variables('UniqueSuffix'), 0, 5))]",
         "CodelessDemoDatabaseName": "Codeless-Demo",
-      "CodelessDemodatabaseEdition": "GeneralPurpose",
+      "CodelessDemodatabaseEdition": "Standard",
         "CodelessDemodatabaseCollation": "SQL_Latin1_General_CP1_CI_AS"
     },
     "resources": [
@@ -39,7 +39,7 @@
             "kind": "StorageV2",
             "sku": {
                 "name": "Standard_LRS",
-                "tier": "Standard_LRS"
+                "tier": "Standard"
             },
             "dependsOn": []
         },
