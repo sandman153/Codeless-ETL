@@ -22,9 +22,9 @@
         "CodelessAdminUser": "[parameters('CodelessAdminUser')]",
         "CodelessAdminPassowrd": "[parameters('CodelessAdminPassword')]",
         "UniqueSuffix": "[uniqueString(resourceGroup().id)]",
-        "CodelessLakeStorageName": "[concat('codelessstage-', substring(variables('UniqueSuffix'),0, 5))]",
-        "CodelessADPFactoryName": "[concat('codeless-', substring(variables('UniqueSuffix'), 0, 5))]",
-        "CodelessDemoServerName": "[concat('sqlserver-', substring(variables('UniqueSuffix'), 0, 5))]",
+        "CodelessLakeStorageName": "[concat('cdless-', substring(variables('UniqueSuffix'),0, 5))]",
+        "CodelessADPFactoryName": "[concat('cdless-', substring(variables('UniqueSuffix'), 0, 5))]",
+        "CodelessDemoServerName": "[concat('sql-', substring(variables('UniqueSuffix'), 0, 5))]",
         "CodelessDemoDatabaseName": "Codeless-Demo",
       "CodelessDemodatabaseEdition": "GeneralPurpose",
         "CodelessDemodatabaseCollation": "SQL_Latin1_General_CP1_CI_AS"
