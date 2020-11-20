@@ -100,7 +100,7 @@ The approximate cost to run the resources provisioned for the estimated duration
 
 | Azure Resource     | Type               | Action                                     |
 | ------------------ | ------------------ | ------------------------------------------ |
-| Azure SQLDB        | Azure SQL Database       | Delete the resources when demo is complete |
+| sql-*suffix*        | Azure SQL Database       | Delete the resources when demo is complete |
 | Azure Data Factory | Azure Data Factory | Stop Debugging once demo is complete       |
 | cdless*suffix* | Azure Data Lake Storage Gen2 |Delete the storage layer when the demo is complete |
 |
