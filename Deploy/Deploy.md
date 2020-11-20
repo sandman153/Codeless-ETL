@@ -8,7 +8,10 @@ The following resources will be deployed in your subscription:
 
 | Name               | Type | Pricing Tier | Pricing Info |
 | ------------------ | ---- | ------------ | ------------ |
-| Azure Data Factory |
+| cdlessadf-*suffix*    |  Azure Data Factory | |  https://azure.microsoft.com/en-us/pricing/details/data-factory/            |
+| cdless*suffix* | Azure Data Lake Storage Gen2 | | https://azure.microsoft.com/en-us/pricing/details/storage/data-lake/ |
+|sql-*suffix*| SQL Database | Standard S0 | https://azure.microsoft.com/en-au/pricing/details/sql-database/single/ |
+
 
  <br>**IMPORTANT**: When you deploy the lab resources in your own subscription you are responsible for the charges related to the use of the services provisioned. If you don't want any extra charges associated with the lab resources you should delete the lab resource group and all resources in it.
 
@@ -97,7 +100,9 @@ The approximate cost to run the resources provisioned for the estimated duration
 
 | Azure Resource     | Type               | Action                                     |
 | ------------------ | ------------------ | ------------------------------------------ |
-| Azure SQLDB        | Azure SQL DB       | Delete the resources when demo is complete |
+| Azure SQLDB        | Azure SQL Database       | Delete the resources when demo is complete |
 | Azure Data Factory | Azure Data Factory | Stop Debugging once demo is complete       |
+| cdless*suffix* | Azure Data Lake Storage Gen2 |Delete the storage layer when the demo is complete |
+|
 
 Some of the services still incur costs even when not running. If you don't want any extra charges associated with the lab resources you should delete the lab resource group and all resources in it.
