@@ -88,11 +88,48 @@ In this section you will use automated deployment and ARM templates to automate 
 
 4. Navigate to your resource group to monitor the progress of your ARM template deployment. A successful deployment should last less than 10 minutes.
 
-    ![](./Media/Lab0-Image11.png)
+    ![](./Media/Demo-006.png)
 
 5. Once your deployment is complete you are ready to start your labs. Enjoy!
 
-    ![](./Media/Lab0-Image09.png)
+    ![](./Media/Demo-007.png)
+
+# Deploy source database
+For the demo the Adventure Works database was used as a data source. Adventure Works is a sample database shipped by Microsoft where you can trial out new features. Microsoft keeps updating the database as they release new features.
+
+### Download Adventure Works database
+To use this database in the demo, download the database backup file from the following location [Adventure Works Database](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms)
+
+As mentioned on the site there are multiple options of the databases available and we will choose the one shown in the image below:
+
+![](./Media/Demo-010.png)
+
+Download the database that has been highlighted. 
+
+### Restore Adventure Works Database
+To continue with the demo, the adventure works database has to be restored into an Azure SQL Database. 
+
+First in the azure portal, open the storage account created for the demo and under containers. 
+
+![](./Media/Demo-016.png)
+
+Create a new container called **load**
+
+![](./Media/Demo-017.png)
+
+Copy the file you downloaded into this container using [Azure Storage Explorer](https://azure.microsoft.com/en-au/features/storage-explorer/)
+
+![](./Media/Demo-018.png)
+
+Next go to the Azure SQL Database that was created earlier and select **Import Database**.
+
+![](./Media/Demo-019.png)
+
+Select the location where the backup file is located and provide credentials as shown.
+
+![](./Media/Demo-020.png)
+
+The import process will now start and once this processs is complete we can proceed with the demo.
 
 ## Demo cost management
 

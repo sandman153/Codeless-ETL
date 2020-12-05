@@ -79,6 +79,24 @@
                     "dependsOn": [
                         "[resourceId('Microsoft.Sql/servers', variables('CodelessDemoServerName'))]"
                     ]
+                },
+                {
+                    "name": "AdventureWorksLT",
+                    "type": "databases",
+                    "apiVersion": "2017-10-01-preview",
+                    "location": "[resourceGroup().location]",
+                    "properties": {
+                        "sampleName": "AdventureWorksLT"
+                    },
+                    "sku": {
+                        "name": "Standard",
+                        "tier": "[variables('CodelessDemodatabaseEdition')]"
+                    },
+                    "tags": {
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Sql/servers', variables('CodelessDemoServerName'))]"
+                    ]
                 }
             ]
         },
