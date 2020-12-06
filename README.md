@@ -11,9 +11,65 @@ In this demo I will build pipelines using the AdventureWorks database and will b
 ## 1. Simple Data Flow
 For the first demo I will be coping data from a source table in the Adventure Works database to a target table in the Codeless-ETL database with no modifications
 
+As a starting step connect to the Azure SQL DB created during the setup using Azure Data Studio. Install [Download and install Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15) if it is not already installed.
+
+Once it is installed connect to the Azure SQL DB created for the demo.
+
+![](./Deploy/Media/Demo-011.png)
+
+Add an entry to the firewall for your IP Address
+
+![](./Deploy/Media/Demo-012.png)
+
+Create a Table in the Codeless-Demo database using the following query.
+
+```sql
+    CREATE TABLE dbo.[Address](
+	[AddressID] [int]  NULL,
+	[AddressLine1] [nvarchar](60)  NULL,
+	[AddressLine2] [nvarchar](60) NULL,
+	[City] [nvarchar](30)  NULL,
+	[StateProvince] varchar(255) NULL,
+	[CountryRegion] varchar(255) NULL,
+	[PostalCode] [nvarchar](15)  NULL,
+	[rowguid] varchar(255)  NULL,
+	[ModifiedDate] [datetime]  NULL
+) ON [PRIMARY]
+```
+
+In Azure Data Factory create a mapping data flow and create a source and destination connection where the source connection points to the AdventureWorksLT database and the destination is the Codeless-Demo database
+
+This demo creates a simple copy of data from source to target.
+
+![](./Deploy/Media/Demo-022.png)
+
 ## 2. Insert Slowly changed records
 In this section of the Demo I will create a more complex scenario where I build in an SCD scenario when loading data.
 
-Import operation for AdventureWorksLT failed.
-ErrorCode: BadRequest
-ErrorMessage: The ImportExport operation with Request Id '2c8cec24-3f98-4ba6-84b1-c1605d9a7ca2' failed due to 'The Azure SQL Server firewall did not allow the operation to connect. To resolve this, please select the "Allow All Azure"checkbox in the Sql Server's configuration blade.'.
+```sql
+    CREATE TABLE [dbo].[Customer](
+	[CustomerID] [int] NULL,
+	[NameStyle] varchar(255) NULL,
+	[Title] [nvarchar](8) NULL,
+	[FirstName] varchar(255) NULL,
+	[MiddleName] varchar(255) NULL,
+	[LastName] varchar(255) NULL,
+	[Suffix] [nvarchar](10) NULL,
+	[CompanyName] [nvarchar](128) NULL,
+	[SalesPerson] [nvarchar](256) NULL,
+	[EmailAddress] [nvarchar](50) NULL,
+	[Phone] varchar(255) NULL,
+	[PasswordHash] [varchar](128) NULL,
+	[PasswordSalt] [varchar](10) NULL,
+	[rowguid] varchar(255) NULL,
+	[ModifiedDate] [datetime] NULL
+) ON [PRIMARY]
+```
+
+In Azure Data Factory create a mapping data flow and create a source and destination connection where the source connection points to the AdventureWorksLT database and the destination is the Codeless-Demo database
+
+This inserts any new records only into the target table, but this code can be modified slightly to perform SCD type 2 loads.
+
+![](./Deploy/Media/Demo-023.png)
+
+T
