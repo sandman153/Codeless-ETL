@@ -101,7 +101,7 @@ For the demo we will be using the AdventureWorksLT sample database. More informa
 
 ## Demo cost management
 
-The approximate cost to run the resources provisioned for the estimated duration of this workshop (2 days) is around USD 100.00. Remember that you will start get charged from the moment the resource template deployment completes successfully. You can minimise costs during the execution of the labs by taking the following actions below:
+Remember that you will start get charged from the moment the resource template deployment completes successfully. You can minimise costs during the execution of the labs by taking the following actions below:
 
 | Azure Resource     | Type               | Action                                     |
 | ------------------ | ------------------ | ------------------------------------------ |
